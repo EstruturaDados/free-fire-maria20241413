@@ -7,6 +7,8 @@
 //  TRABALHO DE ESTRUTURA DE DADOS
 //  ALUNA: Maria Eloisa O Freitas
 //  MATRÍCULA: 202408452969
+//  ALUNA: Mariana Aragão
+//  MATRÍCULA: 202408142943
 // ==============================================
 
 #define MAX 20
