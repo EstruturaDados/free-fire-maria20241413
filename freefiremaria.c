@@ -32,9 +32,6 @@ int estaOrdenadoPorNome(Componente vet[], int n);
 
 /* ---------------------------------------------------------
    Função principal
-   - Interface simples via terminal
-   - Medições de tempo e número de comparações implementadas
-   - Proteções contra leitura inválida e estouro de limites
    --------------------------------------------------------- */
 int main(void) {
     Componente componentes[MAX];
@@ -46,8 +43,7 @@ int main(void) {
     char chave[30];
     int encontrado;
 
-    /* Cabeçalho visível ao executar — lembrar de editar o cabeçalho do arquivo
-       com nome e matrícula antes de subir ao GitHub. */
+
     do {
         printf("
 ===== SISTEMA DE MONTAGEM DA TORRE DE FUGA =====
@@ -69,7 +65,7 @@ int main(void) {
         printf("Escolha uma opção: ");
 
         if (scanf("%d", &opcao) != 1) {
-            /* leitura inválida: limpar buffer e continuar */
+            /* leitura inválida: limpar e continuar */
             printf("Entrada inválida. Digite um número de 0 a 6.
 ");
             int c; while ((c = getchar()) != '
@@ -77,7 +73,7 @@ int main(void) {
             continue;
         }
         getchar(); /* limpar 
- remanescente */
+ */
 
         switch(opcao) {
             case 1:
