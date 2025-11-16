@@ -13,7 +13,7 @@
 
 #define MAX 20
 
-// Estrutura do componente
+// Estrutura de um componente
 typedef struct {
     char nome[30];
     char tipo[20];
