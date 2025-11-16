@@ -29,7 +29,7 @@ void selectionSortPrioridade(Componente vet[], int n, int *comparacoes);
 int buscaBinariaPorNome(Componente vet[], int n, char chave[], int *comparacoes);
 
 // ==============================================
-//  FUNÇÃO PRINCIPAL
+//  FUNÇÃO PRINCIPAL mostra o menu e chama a função
 // ==============================================
 int main() {
     Componente componentes[MAX];
