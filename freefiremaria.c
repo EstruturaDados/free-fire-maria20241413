@@ -20,7 +20,7 @@ typedef struct {
     int prioridade;
 } Componente;
 
-// Protótipos
+// declaração das funções
 void cadastrarComponentes(Componente vet[], int *n);
 void mostrarComponentes(Componente vet[], int n);
 void bubbleSortNome(Componente vet[], int n, int *comparacoes);
