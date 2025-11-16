@@ -1,145 +1,83 @@
-/*
- * Arquivo: 202408452969_Maria_Eloisa_O_Freitas.c    
- * Aluno: Maria Eloisa O Freitas         
- * Matrícula: 202408452969 
- * Grupo: Aluno1 (matrícula), Aluno2 (matrícula) 
- * Disciplina: Estruturas de Dados
- * Professor: Luiz 
- */
+🔫🎒 Desafio Código da Ilha – Edição Free Fire
+Bem-vindo ao Desafio Código da Ilha – Edição Free Fire!
+Neste desafio, você irá simular o gerenciamento de um inventário de sobrevivência em uma ilha misteriosa, utilizando a linguagem C.
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
+A empresa MateCheck encarregou você de desenvolver o sistema de mochila virtual que ajudará os sobreviventes a se prepararem para escapar da ilha.
+O desafio é dividido em três níveis: Novato, Aventureiro e Mestre, cada um com mais complexidade e poder.
 
-#define MAX 20
+🎮 Nível Novato: Inventário Básico
+🚩 Objetivo
+Criar um programa em C com as seguintes funcionalidades:
 
-/* --------------------------------
-   Estrutura do item 
-   ------------------------------ */
-typedef struct {
-    char nome[30];
-    char tipo[20];
-    int prioridade;
-} Componente;
+Adicionar itens à mochila (nome, tipo e quantidade)
+Remover itens pelo nome
+Listar os itens cadastrados
+⚙️ Funcionalidades
+Utilização de struct para representar cada item
+Vetor estático com capacidade para até 10 itens
+Leitura e escrita via terminal (scanf, printf)
+Menu interativo com switch e do-while
+🧠 Simplicidade
+Sem ordenações, buscas especializadas ou uso de ponteiros
+Ideal para praticar manipulação básica de estruturas e arrays
+📥 Entrada
+O usuário escolhe ações no menu e preenche os dados dos itens conforme solicitado.
 
-/* as funções */
-void cadastrarComponentes(Componente vet[], int *n);
-void mostrarComponentes(Componente vet[], int n);
-void bubbleSortNome(Componente vet[], int n, int *comparacoes);
-void insertionSortTipo(Componente vet[], int n, int *comparacoes);
-void selectionSortPrioridade(Componente vet[], int n, int *comparacoes);
-int buscaBinariaPorNome(Componente vet[], int n, char chave[], int *comparacoes);
-int estaOrdenadoPorNome(Componente vet[], int n);
+📤 Saída
+O programa exibe os dados organizados em formato de tabela, com nome, tipo e quantidade.
 
-/* ---------------------------------------------------------
-   Função principal
-   - Interface simples via terminal
-   - Medições de tempo e número de comparações implementadas
-   - Proteções contra leitura inválida e estouro de limites
-   --------------------------------------------------------- */
-int main(void) {
-    Componente componentes[MAX];
-    int n = 0; /* quantidade de componentes cadastrados */
-    int opcao;
-    int comparacoes;
-    clock_t inicio, fim;
-    double tempo;
-    char chave[30];
-    int encontrado;
+🛡️ Nível Aventureiro: Mochila com Busca
+🆕 Diferenças em relação ao Nível Novato
+Implementação de busca sequencial por nome
+Novidade no menu: opção de "Buscar item por nome"
+Exibição detalhada do item encontrado
+⚙️ Funcionalidades
+O usuário pode procurar qualquer item já inserido
+Se encontrado, o programa exibe seus atributos
+Caso contrário, exibe mensagem de erro amigável
+💡 Conceitos Adicionados
+Busca sequencial
+Comparação de strings (strcmp)
+Controle com flag para indicar se item foi encontrado
+📥 Entrada
+O usuário digita o nome do item que deseja buscar.
 
-    /* Cabeçalho visível ao executar — lembrar de editar o cabeçalho do arquivo
-       com nome e matrícula antes de subir ao GitHub. */
-    do {
-        printf("
-===== SISTEMA DE MONTAGEM DA TORRE DE FUGA =====
-");
-        printf("1. Cadastrar componentes
-");
-        printf("2. Mostrar componentes
-");
-        printf("3. Ordenar por NOME (Bubble Sort)
-");
-        printf("4. Ordenar por TIPO (Insertion Sort)
-");
-        printf("5. Ordenar por PRIORIDADE (Selection Sort)
-");
-        printf("6. Buscar componente por NOME (Busca Binária)
-");
-        printf("0. Sair
-");
-        printf("Escolha uma opção: ");
+📤 Saída
+Detalhes completos do item (nome, tipo, quantidade)
+Ou uma mensagem de erro, se não for encontrado
+🧠 Nível Mestre: Ordenação e Busca Binária
+🆕 Diferenças em relação ao Nível Aventureiro
+Adição do campo prioridade aos itens (valores de 1 a 5)
+Possibilidade de ordenar a mochila por nome, tipo ou prioridade
+Implementação da busca binária por nome com verificação de ordenação
+⚙️ Funcionalidades
+Menu de ordenação: o jogador escolhe o critério desejado
+Contador de comparações na ordenação para análise de desempenho
+Busca binária com validação de pré-requisito (lista deve estar ordenada por nome)
+💡 Conceitos Adicionados
+Enumeração (enum) para critérios de ordenação
+Ordenação com Insertion Sort
+Busca binária (binary search)
+Uso de bool para controle de estado
+Análise de desempenho com contador de comparações
+📥 Entrada
+O usuário:
 
-        if (scanf("%d", &opcao) != 1) {
-            /* leitura inválida: limpar buffer e continuar */
-            printf("Entrada inválida. Digite um número de 0 a 6.
-");
-            int c; while ((c = getchar()) != '
-' && c != EOF) {}
-            continue;
-        }
-        getchar(); /* limpar 
- remanescente */
+Adiciona itens com prioridade
+Ordena os itens
+Realiza busca binária pelo nome do item
+📤 Saída
+Mochila ordenada com base no critério escolhido
+Exibição dos dados do item buscado ou mensagem de erro
+Quantidade de comparações realizadas durante a ordenação
+🏁 Conclusão
+Ao completar qualquer nível do Desafio Código da Ilha – Edição Free Fire, você terá avançado significativamente na programação em C, desenvolvendo habilidades práticas de:
 
-        switch(opcao) {
-            case 1:
-                cadastrarComponentes(componentes, &n);
-                break;
+Manipulação de estruturas e arrays
+Criação de menus interativos
+Implementação de buscas e ordenações
+Pensamento modular e boas práticas de software
+Cada nível representa uma missão rumo à sobrevivência total.
+Escolha seu nível, prepare sua mochila... e boa sorte na ilha! 🏝️💼🔍
 
-            case 2:
-                mostrarComponentes(componentes, n);
-                break;
-
-            case 3:
-                comparacoes = 0;
-                inicio = clock();
-                bubbleSortNome(componentes, n, &comparacoes);
-                fim = clock();
-                tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
-                printf("
-Bubble Sort concluído.
-Comparações: %d | Tempo: %.6f segundos
-", comparacoes, tempo);
-                mostrarComponentes(componentes, n);
-                break;
-
-            case 4:
-                comparacoes = 0;
-                inicio = clock();
-                insertionSortTipo(componentes, n, &comparacoes);
-                fim = clock();
-                tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
-                printf("
-Insertion Sort concluído.
-Comparações: %d | Tempo: %.6f segundos
-", comparacoes, tempo);
-                mostrarComponentes(componentes, n);
-                break;
-
-            case 5:
-                comparacoes = 0;
-                inicio = clock();
-                selectionSortPrioridade(componentes, n, &comparacoes);
-                fim = clock();
-                tempo = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
-                printf("
-Selection Sort concluído.
-Comparações: %d | Tempo: %.6f segundos
-", comparacoes, tempo);
-                mostrarComponentes(componentes, n);
-                break;
-
-            case 6:
-                if (n == 0) {
-                    printf("Nenhum componente cadastrado para buscar.
-");
-                    break;
-                }
-                printf("Digite o nome do componente para buscar: ");
-                if (fgets(chave, sizeof(chave), stdin) == NULL) {
-                    printf("Erro ao ler chave.
-");
-                    break;
-                }
-                chave[strcspn(chave, "
-")] = '
+Equipe de Ensino – MateCheck
