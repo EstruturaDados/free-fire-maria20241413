@@ -1,6 +1,6 @@
 /*
  * Arquivo: 202408452969_Maria_Eloisa_e_Mariana_Aragão.c    
- * Grupo: Mariana Aragão (matrícula), Maria Eloisa (202408452969) 
+ * Grupo: Mariana Aragão (202408142943), Maria Eloisa (202408452969) 
  * Disciplina: Estruturas de Dados
  * Professor: Luiz 
  */
@@ -21,7 +21,7 @@ typedef struct {
     int prioridade;
 } Componente;
 
-/* as funções */
+/* as funções*/
 void cadastrarComponentes(Componente vet[], int *n);
 void mostrarComponentes(Componente vet[], int n);
 void bubbleSortNome(Componente vet[], int n, int *comparacoes);
