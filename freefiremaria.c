@@ -1,8 +1,6 @@
 /*
- * Arquivo: 202408452969_Maria_Eloisa_O_Freitas.c    
- * Aluno: Maria Eloisa O Freitas         
- * Matrícula: 202408452969 
- * Grupo: Aluno1 (matrícula), Aluno2 (matrícula) 
+ * Arquivo: 202408452969_Maria_Eloisa_e_Mariana_Aragão.c    
+ * Grupo: Mariana Aragão (matrícula), Maria Eloisa (202408452969) 
  * Disciplina: Estruturas de Dados
  * Professor: Luiz 
  */
