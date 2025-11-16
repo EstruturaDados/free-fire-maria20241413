@@ -69,6 +69,7 @@ int main() {
                 break;
 
             case 3:
+            //ordena por nome usando buble sort
                 comparacoes = 0;
                 bubbleSortNome(componentes, n, &comparacoes);
                 printf("
@@ -77,6 +78,7 @@ Ordenado por nome. Comparações: %d
                 break;
 
             case 4:
+            //usando insertion sort
                 comparacoes = 0;
                 insertionSortTipo(componentes, n, &comparacoes);
                 printf("
@@ -85,6 +87,7 @@ Ordenado por tipo. Comparações: %d
                 break;
 
             case 5:
+            // ordena pela prioridade usando selection sort
                 comparacoes = 0;
                 selectionSortPrioridade(componentes, n, &comparacoes);
                 printf("
@@ -93,6 +96,7 @@ Ordenado por prioridade. Comparações: %d
                 break;
 
             case 6:
+            // busca binaria por nome
                 printf("Digite o nome para buscar: ");
                 scanf(" %29[^
 ]", chave);
@@ -119,9 +123,9 @@ Ordenado por prioridade. Comparações: %d
     return 0;
 }
 
-// ==============================================
+// ======================
 // CADASTRAR COMPONENTES
-// ==============================================
+// =================
 void cadastrarComponentes(Componente vet[], int *n) {
     int qtd;
     printf("Quantos deseja cadastrar (máx %d)? ", MAX - *n);
