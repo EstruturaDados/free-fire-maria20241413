@@ -15,7 +15,10 @@
     Versão: 1.0 - Nível Mestre
 ================================================================================
 */
-
+// Aluna: Maria Eloisa 
+// Matricúla: 202408452969
+// Aluna: Mariana Aragão 
+// Matricúla:202408142943
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -516,3 +519,4 @@ void menuBusca(Componente componentes[], int total) {
         printf("💡 Verifique se o nome está correto e tente novamente.\n");
     }
 }
+
